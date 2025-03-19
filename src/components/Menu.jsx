@@ -4,7 +4,7 @@ const Menu = ({ allMenu }) => {
     <>
       <div className="section-center">
         {allMenu.map(menu => {
-          console.log(menu)
+          
           return (
             <article key={menu.id} className="menu-item">
               <img src={menu.img} alt={menu.title} className="photo" />

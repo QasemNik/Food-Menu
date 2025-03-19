@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { getLocalStorage, setLocalStorage } from '../src/helper/localStorage';
+import { getLocalStorage, setLocalStorage } from '../helper/localStorage';
 
 function Categories({ categories, filterMenus }) {
-    const getInitCategory = getLocalStorage('value') || 'all';
+    const getInitCategory = getLocalStorage('value') || null;
     
     const [mainCategory, setMainCategory] = useState(getInitCategory)
 
@@ -12,9 +12,9 @@ function Categories({ categories, filterMenus }) {
     
     return (
         <div className='btn-container'>
-            {categories.map((item) => (
+            {categories.map((item, index) => (
                 <button
-                    key={item.id}
+                    key={index}
                     type='button'
                     className={item === mainCategory ? 'filter-btn highlight' : "filter-btn"}
                     onClick={() => {
